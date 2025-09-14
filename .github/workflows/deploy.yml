@@ -14,8 +14,8 @@ jobs:
         with:
           toolchain: stable
       - run: |
-        cd apps/backend
-        cargo build --release
+          cd apps/backend
+          cargo build --release
       - run: railway up --service backend
 
   deploy-frontend:
