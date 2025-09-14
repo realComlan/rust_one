@@ -13,7 +13,9 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - run: cd apps/backend && cargo build --release
+      - run: |
+        cd apps/backend
+        cargo build --release
       - run: railway up --service backend
 
   deploy-frontend:
