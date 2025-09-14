@@ -1,0 +1,9 @@
+{
+  "name": "my_project",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ]
+}
+
