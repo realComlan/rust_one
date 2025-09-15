@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Compile in release mode
-RUN cargo build --release
+RUN cargo build -p backend --release 
 
 # Step 2: runtime minimal
 FROM debian:bookworm-slim
@@ -21,10 +21,10 @@ FROM debian:bookworm-slim
 WORKDIR /app
 
 # Copy the compiled binary
-COPY --from=builder /app/target/release/rust_one .
+COPY --from=builder /app/apps/backend/target/release/backend .
 
 # Exposer le port 8080 (Railway attend 8080)
 EXPOSE 8080
 
 # Launch Dockerfile
-CMD ["./rust_one"]
+CMD ["./backend"]

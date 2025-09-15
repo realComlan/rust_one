@@ -1,6 +1,6 @@
 [workspace]
 members = [
-	"apps/backend",
+	"apps/backend", 
 	"libs/common",
 ]
 resolver = "2"
