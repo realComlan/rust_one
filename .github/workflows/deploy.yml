@@ -25,6 +25,8 @@ jobs:
 
       - name: Deploy backend
         run: |
+          ls 
+          ls apps
           cd apps/backend
           railway up --service backend --ci
 
